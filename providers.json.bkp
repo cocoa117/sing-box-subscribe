@@ -1,23 +1,21 @@
 {
     "subscribes":[
         {
-            "url": "<airport uri>",
+            "url": "URL",
             "tag": "tag_1",
             "enabled": true,
             "emoji": 1,
             "subgroup": "",
             "prefix": "",
-            "ex-node-name":"最新网址|剩余流量|过期时间",
             "User-Agent":"v2rayng"
         },
         {
-            "url": "<airport uri>",
+            "url": "URL",
             "tag": "tag_2",
             "enabled": false,
-            "emoji": 1,
-            "subgroup": "",
-            "prefix": "",
-            "ex-node-name":"最新网址|剩余流量|过期时间",
+            "emoji": 0,
+            "subgroup": "命名/named",
+            "prefix": "❤️",
             "User-Agent":"clashmeta"
         }
     ],
@@ -25,9 +23,9 @@
         "proxy": "",
         "direct": ""
     },
-    "save_config_path": "/output/config.json",
+    "save_config_path": "./config.json",
     "auto_backup": false,
     "exclude_protocol":"ssr",
-    "config_template": "/config/my-template.json",
+    "config_template": "",
     "Only-nodes": false
 }

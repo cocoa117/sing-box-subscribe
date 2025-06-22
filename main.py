@@ -591,10 +591,13 @@ if __name__ == '__main__':
     if providers.get('config_template'):
         config_template_path = providers['config_template']
         print('选择: \033[33m' + config_template_path + '\033[0m')
-        # print ('Mẫu cấu hình sử dụng: \033[33m' + template_list[uip] + '.json\033[0m')
-        response = requests.get(providers['config_template'])
-        response.raise_for_status()
-        config = response.json()
+        # Check if the path is a local file path or a URL
+        if config_template_path.startswith('/') or config_template_path.startswith('./'):
+            config = load_json(config_template_path)
+        else:
+            response = requests.get(config_template_path)
+            response.raise_for_status()
+            config = response.json()
     else:
         template_list = get_template()
         if len(template_list) < 1:
